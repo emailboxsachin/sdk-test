@@ -1,0 +1,19 @@
+{
+  "name": "hg-sdks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/easywebrec/holy-grail-sdks.git"
+  },
+  "author": "Sandeep Cheriath",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/easywebrec/holy-grail-sdks/issues"
+  },
+  "homepage": "https://github.com/easywebrec/holy-grail-sdks#readme"
+}
