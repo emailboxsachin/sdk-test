@@ -2,6 +2,7 @@
 /*jshint -W079 */
 var Promise = require('bluebird');
 var r = require('hg-base').RestConnector;
+const https = require('https');
 
 
 function Files(config, log) {
@@ -11,17 +12,39 @@ function Files(config, log) {
 }
 
 Files.prototype.helloWorld = function(){
-    return new Promise(function(fulfill, reject) {
+    // return new Promise(function(fulfill, reject) {
         // req.rest.set_headers(config.api.companyId, companyId);
         // req.rest.call_api('GET', apiPath, {}, 'storage')
             // .then(function(records) {
-                fulfill('hello world');
+                // fulfill('hello world');
             // })
             // .catch(function(e) {
                 // var errMessage = e.response.headers[config.api.messageKey];
                 // console.log(errMessage);
                 // reject(errMessage);
             // });
+    // });
+    return new Promise(function(fulfill, reject) { 
+
+        https.get('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY', (resp) => {
+            let data = '';
+
+            // A chunk of data has been recieved.
+            resp.on('data', (chunk) => {
+                data += chunk;
+            });
+
+            // The whole response has been received. Print out the result.
+            resp.on('end', () => {
+                console.log(JSON.parse(data).explanation);
+                fulfill(JSON.parse(data).explanation);
+            });
+
+        }).on("error", (err) => {
+            console.log("Error: " + err.message);
+            reject(errMessage)
+        });
+
     });
 }
 
