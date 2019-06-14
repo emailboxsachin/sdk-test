@@ -10,6 +10,21 @@ function Files(config, log) {
     self.rest = new r(config, log);
 }
 
+Files.prototype.helloWorld = function(){
+    return new Promise(function(fulfill, reject) {
+        // req.rest.set_headers(config.api.companyId, companyId);
+        // req.rest.call_api('GET', apiPath, {}, 'storage')
+            // .then(function(records) {
+                fulfill('hello world');
+            // })
+            // .catch(function(e) {
+                // var errMessage = e.response.headers[config.api.messageKey];
+                // console.log(errMessage);
+                // reject(errMessage);
+            // });
+    });
+}
+
 Files.prototype.getFileDetails = function(fileId, companyId, req) {
     var self = this;
     var config = self.config;
