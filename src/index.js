@@ -1,4 +1,4 @@
-'use strict';
+/*'use strict';
 function Sdk() {}
 
 Sdk.storage = require('./storage/index.js');
@@ -11,3 +11,9 @@ Sdk.search = require('./search/index.js');
 Sdk.reporting = require('./reporting/index.js');
 
 module.exports = Sdk;
+*/
+function EventBusSdk() {}
+
+EventBusSdk.messaging = require('./messaging');
+
+module.exports = EventBusSdk;
