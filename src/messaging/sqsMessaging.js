@@ -28,7 +28,7 @@ SQSMessaging.prototype.sendMessage = function(message){
                 console.log("Success", data.MessageId);
             }
         });
-    }
+    })
 }
 
 module.exports = SQSMessaging;
