@@ -11,25 +11,24 @@ function SQSMessaging() {
     var self = this;    
 }
 
-SQSMessaging.prototype.createQueue = function(){
+SQSMessaging.prototype.sendMessage = function(message){
     var params = {
-        QueueName: process.env.QUEUENAME,
-        Attributes: {
-          'DelaySeconds': process.env.DELAYSECONDS,
-          'MessageRetentionPeriod': process.env.MESSAGERETENTIONPERIOD
-        }
-    }; 
+        DelaySeconds: process.env.DELAYSECONDS,
+        MessageBody: message,
+        QueueUrl: process.env.QUEUEURL
+    };
+    
     return new Promise(function(fulfill, reject) {
-        sqs.createQueue(params, function(err, data) {
+        sqs.sendMessage(params, function(err, data) {
             if (err) {
                 console.log("Error", err);
                 reject(err);
             } else {
-                fulfill(data);
-                console.log("Success", data.QueueUrl);
+                fulfill(data)
+                console.log("Success", data.MessageId);
             }
         });
-    })
+    }
 }
 
 module.exports = SQSMessaging;
