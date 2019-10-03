@@ -1,5 +1,5 @@
 {
-  "name": "holy-grail-events-bus-sdk",
+  "name": "sdk-test",
   "version": "1.0.0",
   "description": "This service is used to hold the utility code for DDD services",
   "main": "./src/index.js",
@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sachincloudnaut/holy-grail-events-bus-sdk.git"
+    "url": "git+https://github.com/emailboxsachin/sdk-test.git"
   },
   "author": "Sachin Gaikwad",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/sachincloudnaut/holy-grail-events-bus-sdk/issues"
+    "url": "https://github.com/emailboxsachin/sdk-test/issues"
   },
-  "homepage": "https://github.com/sachincloudnaut/holy-grail-events-bus-sdk#readme"
+  "homepage": "https://github.com/emailboxsachin/sdk-test#readme"
 }
