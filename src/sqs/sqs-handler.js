@@ -1,24 +1,21 @@
 var AWS = require('aws-sdk');
-const dotenv = require('dotenv');
-dotenv.config();
 
-// Create an SQS service object
 var sqs = new AWS.SQS({
     apiVersion: process.env.APIVERSION,
     region: process.env.REGION
-  });
+});
 
-function SQSMessaging() {
-    var self = this;    
+function SqsHandler() {
+    var self = this; 
 }
 
-SQSMessaging.prototype.sendMessage = function(message){
+SqsHandler.prototype.push = function(name,source,event_data){
+    console.log('sqs-handler.push called')
     var params = {
         DelaySeconds: process.env.DELAYSECONDS,
-        MessageBody: message,
+        MessageBody: event_data,
         QueueUrl: process.env.QUEUEURL
     };
-    
     return new Promise(function(fulfill, reject) {
         sqs.sendMessage(params, function(err, data) {
             if (err) {
@@ -27,7 +24,7 @@ SQSMessaging.prototype.sendMessage = function(message){
                 fulfill(data)
             }
         });
-    })
+    })    
 }
 
-module.exports = SQSMessaging;
+module.exports = SqsHandler;
