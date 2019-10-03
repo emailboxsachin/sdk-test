@@ -1,19 +1,19 @@
 {
-  "name": "hg-sdks",
+  "name": "holy-grail-events-bus-sdk",
   "version": "1.0.0",
-  "description": "",
+  "description": "This service is used to hold the utility code for DDD services",
   "main": "./src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/easywebrec/holy-grail-sdks.git"
+    "url": "git+https://github.com/sachincloudnaut/holy-grail-events-bus-sdk.git"
   },
-  "author": "Sandeep Cheriath",
+  "author": "Sachin Gaikwad",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/easywebrec/holy-grail-sdks/issues"
+    "url": "https://github.com/sachincloudnaut/holy-grail-events-bus-sdk/issues"
   },
-  "homepage": "https://github.com/easywebrec/holy-grail-sdks#readme"
+  "homepage": "https://github.com/sachincloudnaut/holy-grail-events-bus-sdk#readme"
 }
